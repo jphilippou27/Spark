@@ -5,4 +5,4 @@
 ![PR-illustrated.png](PR-illustrated.png)
 
 
-![output of code] (GCPscreenshot.PNG)
+![output of code](GCPscreenshot.PNG)
