@@ -2,7 +2,7 @@
 
 The goal of this piece of code is to parallel process 2GB of Wikipedia links, and by understanding the relationships between nodes in the Wikipedia network, to identify the most popular webpages. To accomplish this task, I evaluated the data with the pageRank algorithm and processed it on GCP cluster. At the end, the most prominent page links in the network should have the highest probability allocated to them.
 
-The dataset is store on HDFS in a series of txt files with the following format:
+The dataset is stored on a HDFS in a series of txt files with the following format:
 
 2	{'3': 3}
 
