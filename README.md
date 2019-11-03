@@ -5,9 +5,13 @@ The goal of this piece of code is to parallel process 2GB of Wikipedia links, an
 The dataset is store on HDFS in a series of txt files with the following format:
 
 2	{'3': 3}
+
 3	{'2': 1}
+
 4	{'1': 1, '2': 1}
+
 5	{'4': 1, '2': 1, '6': 1}
+
 
 where each row is a webpage link and the dictionary shows the outbound traffic to other webpages and their corresponding ids.
 
