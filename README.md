@@ -1,6 +1,16 @@
 # Spark
 
-The goal of this piece of code is to parallel process 2GB of Wikipedia links to determine the relationship between nodes in a network. To accomplish this task, I evaluated the data with the pageRank algorithm and processed it on GCP cluster. The most prominent page links in the network should have the highest probability allocated to them.
+The goal of this piece of code is to parallel process 2GB of Wikipedia links, and by understanding the relationships between nodes in the Wikipedia network, to identify the most popular webpages. To accomplish this task, I evaluated the data with the pageRank algorithm and processed it on GCP cluster. At the end, the most prominent page links in the network should have the highest probability allocated to them.
+
+The dataset is store on HDFS in a series of txt files with the following format:
+
+2	{'3': 3}
+3	{'2': 1}
+4	{'1': 1, '2': 1}
+5	{'4': 1, '2': 1, '6': 1}
+
+where each row is a webpage link and the dictionary shows the outbound traffic to other webpages and their corresponding ids.
+
 
 The diagram below is an overview of the math required to iterate over the network graph recursively. Each time the algorithm runs probability is allocated to each page's children. The algorithm also takes into account dangling nodes (or dead-end web pages) where the user will teleport to someone else in the network so each node gets an even piece of the mass on the next iteration.  Due to the large size of the dataset, I work with Spark RDDs and data dictionaries with the following critical format: (node_id , (score, edges)) to facilitate the heavy workload.
 
@@ -11,3 +21,4 @@ I was able to successfully deploy the program on Google Cloud Platform so the tr
 ![output of code](GCPscreenshot.PNG)
 
 The CSV shows the final output of which nodes have the highest probability within the link network.
+
