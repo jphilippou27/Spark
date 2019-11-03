@@ -26,3 +26,6 @@ I was able to successfully deploy the program on Google Cloud Platform so the tr
 
 The CSV shows the final output of which nodes have the highest probability within the link network.
 
+If you are interested in learning more, here is the link to Larry & Serge's orginial paper from 1998:
+
+http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf
